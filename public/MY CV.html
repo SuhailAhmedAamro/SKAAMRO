@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhail Ahmed Aamro - Professional CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .name-title h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .name-title h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            width: 20px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #64b5f6;
+        }
+        
+        /* Main Content */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 40px;
+            gap: 40px;
+        }
+        
+        /* Left Column */
+        .left-column {
+            border-right: 1px solid #eaeaea;
+            padding-right: 40px;
+        }
+        
+        /* Right Column */
+        .right-column {
+            padding-left: 10px;
+        }
+        
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a6491;
+            position: relative;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #4a6491;
+        }
+        
+        /* Profile Section */
+        .profile-text {
+            font-size: 1.1rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        /* Education Section */
+        .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .education-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .institution {
+            color: #4a6491;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        
+        /* Achievements Section */
+        .achievement-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .achievement-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a6491;
+            font-weight: bold;
+        }
+        
+        /* Skills Section */
+        .skill-category {
+            margin-bottom: 25px;
+        }
+        
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: #eef2f7;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            border-left: 3px solid #4a6491;
+        }
+        
+        /* Languages Section */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+        
+        .language-name {
+            font-weight: 500;
+        }
+        
+        .language-level {
+            color: #4a6491;
+            font-weight: 500;
+        }
+        
+        /* Reference Section */
+        .reference-note {
+            font-style: italic;
+            color: #666;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #4a6491;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f0f4f8;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .left-column {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #eaeaea;
+                padding-bottom: 30px;
+            }
+            
+            .right-column {
+                padding-left: 0;
+            }
+            
+            .header {
+                padding: 30px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-info {
+                text-align: left;
+                margin-top: 20px;
+            }
+            
+            .contact-info p {
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header {
+                padding: 25px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .name-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .name-title h2 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            
+            .footer {
+                display: none;
+            }
+            
+            .skill-tag {
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="name-title">
+                <h1>SUHAIL AHMED AAMRO</h1>
+                <h2>Web Developer & IT Graduate</h2>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +92 309 3305243</p>
+                <p><i class="fas fa-mobile-alt"></i> +92 315 3558383</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:suhailahmedamro786@gmail.com">suhailahmedamro786@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Maliah Chowk near Bhatti colony, Dadu</p>
+                <p><i class="fas fa-globe"></i> <a href="https://my-portfilo-41201.vercel.app/" target="_blank">my-portfilo-41201.vercel.app</a></p>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Profile Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-user"></i> PROFILE</h3>
+                    <p class="profile-text">
+                        Results-driven graduate with a track record of academic distinction, including an A-grade IT diploma and scoring 45 points in the competitive IBA BPS test. Developed multiple professional web applications using React.js, Next.js, and Python with Streamlit. Combines strong technical capabilities with excellent communication and problem-solving skills. Eager to contribute to organizational success while growing as a professional.                    </p>
+                </section>
+                
+                <!-- Education Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Matriculation</div>
+                        <div class="institution">Government Talib-ul-Mola High School, Dadu</div>
+                        <div class="education-details">
+                            <span class="year">2017</span>
+                            <span class="grade">Grade: B</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Intermediate (Pre-Engineering)</div>
+                        <div class="institution">Ustad Bukhari Degree College, Dadu</div>
+                        <div class="education-details">
+                            <span class="year">2019</span>
+                            <span class="grade">Grade: C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Bachelor of Arts (B.A)</div>
+                        <div class="institution">Ustad Bukhari Degree College, Dadu</div>
+                        <div class="education-details">
+                            <span class="year">2023</span>
+                            <span class="grade">Second Division</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Diploma in Information Technology (1 Year)</div>
+                        <div class="institution">Shaheed Mohtarma Benazir Bhutto University, Karachi</div>
+                        <div class="education-details">
+                            <span class="year">2022</span>
+                            <span class="grade">Grade: A</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Office Automation Course (4 Months)</div>
+                        <div class="institution">Benazir Youth Program</div>
+                        <div class="education-details">
+                            <span class="year">2021</span>
+                            <span class="grade">Passed with Merit</span>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Governor Initiative for Artificial Intelligence, Web 3.0, and Metaverse</div>
+                        <div class="institution">Governor House Karachi</div>
+                        <div class="education-details">
+                            <span class="year">2024</span>
+                            <span class="grade">Currently Enrolled</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Achievements Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-trophy"></i> ACHIEVEMENTS</h3>
+                    
+                    <div class="achievement-item">Scored 45 Points in IBA 5 BPS to 15 BPS Test</div>
+                    <div class="achievement-item">Completed 1-Year IT Diploma with Distinction</div>
+                    <div class="achievement-item">Created multiple Next.js & React projects hosted on Vercel</div>
+                    <div class="achievement-item">Developed professional Python + Streamlit apps for learning and growth</div>
+                </section>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Skills Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-code"></i> SKILLS</h3>
+                    
+                    <div class="skill-category">
+                        <h4>Frontend Development</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Backend & Tools</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">Python (Basic)</span>
+                            <span class="skill-tag">Sanity CMS</span>
+                            <span class="skill-tag">API Integration</span>
+                            <span class="skill-tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Platforms & Deployment</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">Google Colab</span>
+                            <span class="skill-tag">Vercel Deployment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Professional Skills</h4>
+                        <div class="skill-items">
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Teamwork</span>
+                            <span class="skill-tag">Problem Solving</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Languages Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-language"></i> LANGUAGES</h3>
+                    
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    
+                    <div class="language-item">
+                        <span class="language-name">Urdu</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    
+                    <div class="language-item">
+                        <span class="language-name">Sindhi</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                </section>
+                
+                <!-- Reference Section -->
+                <section class="section">
+                    <h3 class="section-title"><i class="fas fa-users"></i> REFERENCE</h3>
+                    <div class="reference-note">
+                        References available upon request. Please contact via email or phone for further information.
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+    
+    </div>
+
+    <script>
+        // Simple script to handle print functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to email for better UX
+            const emailLink = document.querySelector('a[href^="mailto"]');
+            if(emailLink) {
+                emailLink.addEventListener('click', function() {
+                    console.log('Email link clicked');
+                });
+            }
+            
+            // Add click event to portfolio link
+            const portfolioLink = document.querySelector('a[href*="vercel.app"]');
+            if(portfolioLink) {
+                portfolioLink.addEventListener('click', function(e) {
+                    console.log('Portfolio link clicked, opening in new tab');
+                });
+            }
+            
+            // Optional: Add print button functionality
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Print CV';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #2c3e50;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                z-index: 100;
+                font-weight: 600;
+            `;
+            
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printBtn);
+            
+            // Hide print button when printing
+            const style = document.createElement('style');
+            style.textContent = `
+                @media print {
+                    button {
+                        display: none !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
